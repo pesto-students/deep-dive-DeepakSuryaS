@@ -61,11 +61,29 @@ button {
   font-weight: 700;
   border: none;
   border-radius: 3px;
-  padding: .3rem 1rem;
-  margin-left: .5rem;
+  padding: .8rem 1.2rem;
+  margin-right: .5rem;
 }
 
 .buttonDefault {
   background: #247BA0;
   color: #fff;
+}
+
+.actionButton {
+  display: block;
+  margin: 10px auto;
+}
+
+label {
+  display: block;
+  padding: 10px 0;
+}
+
+input {
+  height: 30px;
+  width: 90%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  padding: 5px 10px;
 }

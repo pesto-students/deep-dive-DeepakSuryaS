@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { createRef, useEffect } from 'react'
 import Modal from './Modal'
 import useModal from '../hooks/useModal'
 import { navigate } from '@reach/router'
 
 function Homepage({ isLoggedIn, setIsLoggedIn }) {
+
   function handleSubmit() {
-    console.log('submit: ', isLoggedIn)
     setIsLoggedIn(true)
     navigate('/dashboard')
   }
@@ -28,14 +28,20 @@ function Homepage({ isLoggedIn, setIsLoggedIn }) {
       </button>
       <Modal {...signUpModal}>
         <div>
-          <p>Sign up form</p>
-          <button onClick={handleSubmit}>Submit</button>
+          <label>Username</label>
+          <input type="text" name="username" id="username" />
+          <label>Password</label>
+          <input type="password" name="password" id="password" />
+          <button className="actionButton" onClick={handleSubmit}>Submit</button>
         </div>
       </Modal>
       <Modal {...signInModal}>
         <div>
-          <p>Sign in form</p>
-          <button onClick={handleSubmit}>Submit</button>
+          <label>Username</label>
+          <input type="text" name="username" id="username" />
+          <label>Password</label>
+          <input type="password" name="password" id="password" />
+          <button className="actionButton" onClick={handleSubmit}>Submit</button>
         </div>
       </Modal>
     </div>

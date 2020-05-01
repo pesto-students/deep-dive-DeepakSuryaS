@@ -14,7 +14,7 @@ function Dashboard({ isLoggedIn, setIsLoggedIn }) {
   return (
     <div>
       Dashboard
-      <button onClick={handleSignOut}>Sign out</button>
+      <button className="actionButton" onClick={handleSignOut}>Sign out</button>
     </div>
   )
 }
