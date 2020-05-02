@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "../Common.css";
+import * as Constants from "../Constants";
 
 const Modal = ({ isShowing, hide, args, children }) => {
   function handleOverlayClicked(event) {
@@ -49,7 +50,7 @@ const Modal = ({ isShowing, hide, args, children }) => {
             className="modalContent"
             aria-modal
             aria-hidden
-            tabIndex="-1"
+            tabIndex={Constants.UNSELECTED_TAB_INDEX}
             role="dialog"
             onClick={handleOverlayClicked}
           >

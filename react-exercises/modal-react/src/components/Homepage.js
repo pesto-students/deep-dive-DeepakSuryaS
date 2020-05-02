@@ -4,6 +4,7 @@ import useModal from "../hooks/useModal";
 import { navigate } from "@reach/router";
 import Route from "../Routes";
 import "../Common.css";
+import * as Constants from "../Constants";
 
 function Homepage({ isLoggedIn, setIsLoggedIn }) {
   const inputRef = useRef(null);
@@ -14,12 +15,12 @@ function Homepage({ isLoggedIn, setIsLoggedIn }) {
   }
 
   const [signUpModal, toggleSignUpModal] = useModal({
-    heading: "Sign up",
+    heading: Constants.SIGNUP_BUTTON_TITLE,
     ref: inputRef,
   });
 
   const [signInModal, toggleSignInModal] = useModal({
-    heading: "Sign in",
+    heading: Constants.SIGNIN_BUTTON_TITLE,
     ref: inputRef,
   });
 
