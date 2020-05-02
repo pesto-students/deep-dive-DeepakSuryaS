@@ -8,39 +8,39 @@ const Modal = ({
   children
 }) => {
 
-  function handleOverlayClicked(e) {
+  function handleOverlayClicked(event) {
     hide()
   }
 
-  function dialogClicked(e) {
-    e.stopPropagation()
+  function dialogClicked(event) {
+    event.stopPropagation()
   }
 
   /* useEffect(() => {
-    function keyListener(e) {
-      const listener = keyListenersMap.get(e.keyCode)
-      return listener && listener(e)
+    function keyListener(event) {
+      const listener = keyListenersMap.get(event.keyCode)
+      return listener && listener(event)
     }
     document.addEventListener("keydown", keyListener)
 
     return () => document.removeEventListener("keydown", keyListener)
   }, [])
 
-  function handleTabKey(e) {
+  function handleTabKey(event) {
     const focusableModalElements = modalRef.current.querySelectorAll(
       'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
     )
     const firstElement = focusableModalElements[0]
     const lastElement = focusableModalElements[focusableModalElements.length - 1]
 
-    if (!e.shiftKey && document.activeElement !== firstElement) {
+    if (!event.shiftKey && document.activeElement !== firstElement) {
       firstElement.focus()
-      return e.preventDefault()
+      return event.preventDefault()
     }
 
-    if (e.shiftKey && document.activeElement !== lastElement) {
+    if (event.shiftKey && document.activeElement !== lastElement) {
       lastElement.focus()
-      e.preventDefault()
+      event.preventDefault()
     }
   }
 
@@ -50,7 +50,7 @@ const Modal = ({
     <Fragment>
       <div className="modalOverlay" />
       <div 
-        className="modalWrapper" 
+        className="modalContent" 
         aria-modal 
         aria-hidden
         tabIndex="-1"
@@ -67,7 +67,7 @@ const Modal = ({
               aria-label="Close"
               onClick={hide}
             >
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true">X</span>
             </button>
           </div>
           {children}

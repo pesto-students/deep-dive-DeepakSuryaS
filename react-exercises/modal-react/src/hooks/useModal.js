@@ -9,8 +9,8 @@ const useModal = (args) => {
     !isShowing ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto'
   }
 
-  /* function handleKeydown(e) {
-    if (e.key === 'Escape' || e.keyCode === 27) {
+  function handleKeydown(event) {
+    if (event.key === 'Escape' || event.keyCode === 27) {
       toggle()
     }
   }
@@ -21,26 +21,26 @@ const useModal = (args) => {
       args.ref.current.focus()
     }
     return () => document.removeEventListener('keydown', handleKeydown)
-  }, [isShowing]) */
+  }, [isShowing])
 
-  useEffect(() => {
+  /* useEffect(() => {
     isShowing && args.ref.current.focus()
-    function keyListener(e) {
-      const listener = keyListenersMap.get(e.keyCode)
-      return listener && listener(e)
+    function keyListener(event) {
+      const listener = keyListenersMap.get(event.keyCode)
+      return listener && listener(event)
     }
     document.addEventListener("keydown", keyListener)
 
     return () => document.removeEventListener("keydown", keyListener)
   }, [isShowing])
 
-  function handleTabKey(e) {
+  function handleTabKey(event) {
     const modalElement = document.getElementById("modal")
     const focusableModalElements = modalElement.querySelectorAll(
       'a[href], button, textarea, input, select'
     )
     if(focusableModalElements) {
-      if (!e.shiftKey) {
+      if (!event.shiftKey) {
         if(activeElementIndex >= focusableModalElements.length) {
           setActiveElementIndex(0)
         } else if(activeElementIndex < 0) {
@@ -49,10 +49,10 @@ const useModal = (args) => {
           setActiveElementIndex(prev => prev + 1)
         }
         focusableModalElements[activeElementIndex].focus()
-        return e.preventDefault()
+        return event.preventDefault()
       }
 
-      if (e.shiftKey) {
+      if (event.shiftKey) {
         if(activeElementIndex >= focusableModalElements.length) {
           setActiveElementIndex(0)
         } else if(activeElementIndex < 0) {
@@ -61,12 +61,12 @@ const useModal = (args) => {
           setActiveElementIndex(prev => prev - 1)
         }
         focusableModalElements[activeElementIndex].focus()
-        e.preventDefault()
+        event.preventDefault()
       }
     }
   }
 
-  const keyListenersMap = new Map([[27, toggle], [9, handleTabKey]])
+  const keyListenersMap = new Map([[27, toggle], [9, handleTabKey]]) */
 
   return [{ isShowing, hide: toggle, args }, toggle]
 }
