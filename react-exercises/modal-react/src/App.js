@@ -1,28 +1,29 @@
-import React, { useState } from 'react'
-import './App.css'
-import { Router } from '@reach/router'
-import Homepage from './components/Homepage'
-import Dashboard from './components/Dashboard'
+import React, { useState } from "react";
+import "./App.css";
+import { Router } from "@reach/router";
+import Homepage from "./components/Homepage";
+import Dashboard from "./components/Dashboard";
+import Route from "./Routes";
 
-function App() {  
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="App">
       <Router>
-        <Homepage 
-          path="/" 
+        <Homepage
+          path={Route.HOME}
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
         />
-        <Dashboard 
-          path="/dashboard" 
+        <Dashboard
+          path={Route.DASHBOARD}
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
         />
       </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
