@@ -1,26 +1,28 @@
-import React, { useRef, useEffect } from 'react'
-import Modal from './Modal'
-import useModal from '../hooks/useModal'
-import { navigate } from '@reach/router'
+import React, { useRef } from "react";
+import Modal from "./Modal";
+import useModal from "../hooks/useModal";
+import { navigate } from "@reach/router";
+import Route from "../Routes";
+import "../Common.css";
+import * as Constants from "../Constants";
 
 function Homepage({ isLoggedIn, setIsLoggedIn }) {
-
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
 
   function handleSubmit() {
-    setIsLoggedIn(true)
-    navigate('/dashboard')
+    setIsLoggedIn(true);
+    navigate(Route.DASHBOARD);
   }
 
   const [signUpModal, toggleSignUpModal] = useModal({
-    heading: 'Sign up',
-    ref: inputRef
-  })
+    heading: Constants.SIGNUP_BUTTON_TITLE,
+    ref: inputRef,
+  });
 
   const [signInModal, toggleSignInModal] = useModal({
-    heading: 'Sign in',
-    ref: inputRef
-  })
+    heading: Constants.SIGNIN_BUTTON_TITLE,
+    ref: inputRef,
+  });
 
   return (
     <div>
@@ -30,30 +32,117 @@ function Homepage({ isLoggedIn, setIsLoggedIn }) {
       <button className="buttonDefault" onClick={toggleSignInModal}>
         Sign in
       </button>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et ipsum sequi cum illum. Repellendus non voluptatum soluta eaque reprehenderit.</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+        earum ad. Enim reiciendis odio at labore consequatur, quas commodi, et
+        ipsum sequi cum illum. Repellendus non voluptatum soluta eaque
+        reprehenderit.
+      </p>
       <Modal {...signUpModal}>
         <div>
           <label>Username</label>
           <input type="text" name="username" id="username" ref={inputRef} />
           <label>Password</label>
           <input type="password" name="password" id="password" />
-          <button className="actionButton" onClick={handleSubmit}>Submit</button>
+          <button className="actionButton" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       </Modal>
       <Modal {...signInModal}>
@@ -62,11 +151,13 @@ function Homepage({ isLoggedIn, setIsLoggedIn }) {
           <input type="text" name="username" id="username" ref={inputRef} />
           <label>Password</label>
           <input type="password" name="password" id="password" />
-          <button className="actionButton" onClick={handleSubmit}>Submit</button>
+          <button className="actionButton" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
       </Modal>
     </div>
-  )
+  );
 }
 
-export default Homepage
+export default Homepage;
