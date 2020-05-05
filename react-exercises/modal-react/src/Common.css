@@ -82,3 +82,8 @@ input {
   overflow-y: auto;
   outline: 0;
 }
+
+p {
+  padding: 10px 50px;
+  text-align: left;
+}

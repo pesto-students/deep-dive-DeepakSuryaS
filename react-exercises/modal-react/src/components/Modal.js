@@ -12,36 +12,6 @@ const Modal = ({ isShowing, hide, args, children }) => {
     event.stopPropagation();
   }
 
-  /* useEffect(() => {
-    function keyListener(event) {
-      const listener = keyListenersMap.get(event.keyCode)
-      return listener && listener(event)
-    }
-    document.addEventListener("keydown", keyListener)
-
-    return () => document.removeEventListener("keydown", keyListener)
-  }, [])
-
-  function handleTabKey(event) {
-    const focusableModalElements = modalRef.current.querySelectorAll(
-      'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
-    )
-    const firstElement = focusableModalElements[0]
-    const lastElement = focusableModalElements[focusableModalElements.length - 1]
-
-    if (!event.shiftKey && document.activeElement !== firstElement) {
-      firstElement.focus()
-      return event.preventDefault()
-    }
-
-    if (event.shiftKey && document.activeElement !== lastElement) {
-      lastElement.focus()
-      event.preventDefault()
-    }
-  }
-
-  const keyListenersMap = new Map([[27, hide], [9, handleTabKey]]) */
-
   return isShowing
     ? ReactDOM.createPortal(
         <Fragment>
