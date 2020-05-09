@@ -1,10 +1,6 @@
 const {
   csvToJson,
-  jsonToCsv,
-  csvToJsonFromFile,
-  csvToJsonFromUrl,
-  jsonToCsvFromFile,
-  jsonToCsvFromUrl
+  jsonToCsv
 } = require('../dist/bundle/index')
 
 describe('csv to json parse', function () {
