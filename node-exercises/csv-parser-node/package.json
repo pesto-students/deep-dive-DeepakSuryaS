@@ -1,0 +1,13 @@
+{
+  "name": "csv-parser-node",
+  "version": "1.0.0",
+  "description": "csv parser ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {}
+}
