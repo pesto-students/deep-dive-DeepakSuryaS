@@ -1,4 +1,4 @@
-import { csvToJson } from '../src/lib/parser.js'
+import { csvToJson } from '../dist/bundle/index.mjs'
 
 try {
 
@@ -6,12 +6,7 @@ try {
 
     const csvString = `policyID>statecode>county>eq_site_limit>hu_site_limit>fl_site_limit>fr_site_limit>tiv_2011>tiv_2012>eq_site_deductible>hu_site_deductible>fl_site_deductible>fr_site_deductible>point_latitude>point_longitude>line>construction>point_granularity
     223488>FL>CLAY COUNTY>328500>328500>328500>328500>328500>348374.25>0>16425>0>0>30.102217>-81.707146>Residential>Wood>1
-    433512>FL>CLAY COUNTY>315000>315000>315000>315000>315000>265821.57>0>15750>0>0>30.118774>-81.704613>Residential>Wood>1
-    142071>FL>CLAY COUNTY>705600>705600>705600>705600>705600>1010842.56>14112>35280>0>0>30.100628>-81.703751>Residential>Masonry>1
-    253816>FL>CLAY COUNTY>831498.3>831498.3>831498.3>831498.3>831498.3>1117791.48>0>0>0>0>30.10216>-81.719444>Residential>Masonry>1
-
-    894922>FL>CLAY COUNTY>0>24059.09>0>0>24059.09>33952.19>0>0>0>0>30.095957>-81.695099>Residential>Wood>1
-
+    22345>FL> COUNTY>328555>328500>328500>328500>328500>348374.25>0>16425>0>0>30.102217>-81.707146>Residential>Wood>1
     `
 
     // custom headers
@@ -19,7 +14,8 @@ try {
 
     // comsuming using for csv string 
     const output = await csvToJson({ csvString, delimiter: '>', outputMode: 'string', headers: headersArr })
-
+    console.log(output)
+   
     // output as string 
     const string = await csvToJson({ path: 'small.csv', delimiter: ',', outputMode: 'string', headers: true, skipComments: true })
 
@@ -27,18 +23,18 @@ try {
 
     // comsuming using for await 
     for await (const line of streamForAwait) {
-      console.log("\n", line);
+      // console.log("\n", line);
     }
 
     // consuming using streams
     const stream = await csvToJson({ path: 'sample.csv', delimiter: ',', outputMode: 'stream', headers: true })
 
     stream.on('data', (data) => {
-      console.log(data)
+      // console.log(data)
     })
 
     stream.on('end', () => {
-      console.log("stream end")
+      // console.log("stream end")
     })
   })();
 
