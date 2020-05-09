@@ -2,6 +2,14 @@ const {
   csvToJson,
   jsonToCsv
 } = require('../dist/bundle/index')
+const Readable = require('stream')
+
+describe('output is instance of Streams', function () {
+  test("output should be instance of streams", async () => {
+    const output = await csvToJson({ path: './samples/small.csv', delimiter: ',', outputMode: 'stream', headers: true, skipComments: true })
+    expect(output instanceof (Readable)).toBe(true)
+  })
+})
 
 describe('csv to json parse', function () {
   test('function return type test', () => {
