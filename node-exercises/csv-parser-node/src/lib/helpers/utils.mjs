@@ -1,5 +1,5 @@
-import {createReadStream} from 'fs'
-import {Readable} from 'stream'
+import { createReadStream } from 'fs'
+import { Readable } from 'stream'
 
 export const streamFromFile = (file, opts = { encoding: 'utf8' }) => {
   try {
@@ -23,6 +23,7 @@ export const streamFromUrl = (url, opts = { encoding: 'utf8' }) => {
     if (!url) throw new Error("url not provided")
     // Todo:
     // send Stream Object from here
+    return createReadStream(url, opts) // provided url uses file protocol
   } catch (error) {
     throw error
   }

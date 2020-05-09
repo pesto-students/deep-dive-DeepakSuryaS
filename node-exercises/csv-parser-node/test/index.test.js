@@ -5,7 +5,7 @@ const {
   csvToJsonFromUrl,
   jsonToCsvFromFile,
   jsonToCsvFromUrl
-} = require('../src/lib/parser.mjs')
+} = require('../dist/bundle/index')
 
 describe('csv to json parse', function() {
   test('function return type test', () => {
