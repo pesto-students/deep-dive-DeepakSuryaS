@@ -1,3 +1,5 @@
+
+import { Readable } from 'stream';
 import { csvToJson } from '../dist/bundle/index.mjs'
 
 try {
@@ -15,11 +17,11 @@ try {
     // comsuming using for csv string 
     const output = await csvToJson({ csvString, delimiter: '>', outputMode: 'string', headers: headersArr })
     console.log(output)
-   
-    // output as string 
-    const string = await csvToJson({ path: 'small.csv', delimiter: ',', outputMode: 'string', headers: true, skipComments: true })
 
-    const streamForAwait = await csvToJson({ path: 'sample.csv', delimiter: ',', outputMode: 'stream', headers: true })
+    // output as string 
+    const string = await csvToJson({ path: './samples/small.csv', delimiter: ',', outputMode: 'string', headers: true, skipComments: true })
+
+    const streamForAwait = await csvToJson({ path: './samples/small.csv', delimiter: ',', outputMode: 'stream', headers: true })
 
     // comsuming using for await 
     for await (const line of streamForAwait) {
@@ -27,7 +29,7 @@ try {
     }
 
     // consuming using streams
-    const stream = await csvToJson({ path: 'sample.csv', delimiter: ',', outputMode: 'stream', headers: true })
+    const stream = await csvToJson({ path: '../samples/small.csv', delimiter: ',', outputMode: 'stream', headers: true })
 
     stream.on('data', (data) => {
       // console.log(data)
