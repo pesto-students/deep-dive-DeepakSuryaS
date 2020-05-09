@@ -1,6 +1,8 @@
 const {
   csvToJson,
-  jsonToCsv
+  jsonToCsv,
+  csvToJsonFromFile,
+  jsonToCsvFromFile
 } = require('../dist/bundle/index')
 
 describe('csv to json parse', function () {
@@ -22,6 +24,16 @@ describe('csv to json parse', function () {
 
   test('Throw error for invalid parameters', () => {
     expect(jsonToCsv()).rejects.toThrow()
+  })
+
+  test('convert json file to csv file', async () => {
+    const actual = await jsonToCsv({ path: './samples/small.json', outputMode: 'stream', headers: true, skipComments: true })
+    expect(actual).toBeTruthy()
+  })
+
+  test('convert csv file to json file', async () => {
+    const actual = await csvToJson({ path: './samples/small.csv', delimiter: ',', outputMode: 'stream', headers: true, skipComments: true })
+    expect(actual).toBeTruthy()
   })
 
   /* test('check if function returns a stream', async () => {
