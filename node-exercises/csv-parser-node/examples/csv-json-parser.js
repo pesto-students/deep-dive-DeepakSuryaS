@@ -1,4 +1,4 @@
-import { csvToJson } from '../src/lib/parser.mjs'
+import { csvToJson } from '../src/lib/parser.js'
 
 try {
 

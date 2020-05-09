@@ -1,4 +1,5 @@
 import {createReadStream} from 'fs'
+import {Readable} from 'stream'
 
 export const streamFromFile = (file, opts = { encoding: 'utf8' }) => {
   try {

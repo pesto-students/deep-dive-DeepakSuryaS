@@ -36,9 +36,10 @@ export async function csvToJson(config) {
       }
 
     } catch (error) {
-      reject(error)
+      reject(error.message)
     }
   })
+  .catch(error => console.log('Error:', error))
 }
 
 export async function jsonToCsv(config) {
@@ -74,9 +75,10 @@ export async function jsonToCsv(config) {
       }
 
     } catch (error) {
-      reject(error)
+      reject(error.message)
     }
   })
+  .catch(error => console.log('Error:', error))
 }
 
 export async function csvToJsonFromFile(config) {
