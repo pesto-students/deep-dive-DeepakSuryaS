@@ -1,5 +1,3 @@
-export * from './lib/parser.mjs'
-
 import { csvToJson, jsonToCsv } from '../src/lib/parser.mjs'
 
 try {
@@ -22,25 +20,25 @@ try {
     // const string = await csvToJson({ csvString, delimiter: '>', outputMode: 'string',headers:true })
     // console.log(string)
 
-    // const string = await jsonToCsv({ path: './samples/sample.json', delimiter: ',',quoteChar:'"',newline: "\r\n", outputMode: 'string', headers: true })
-    // console.log(string)
+    const string = await jsonToCsv({ path: './samples/sample.json', delimiter: ',',quoteChar:'"',newline: "\r\n", outputMode: 'string', headers: true })
+    console.log(string)
 
 
 
-    const stream =await jsonToCsv({ path: './samples/sample.json', delimiter: ',',quoteChar:'"',newlineChar: "\n", outputMode: 'stream', headers: true })
+    // const stream = await csvToJson({ path: 'sample.csv', delimiter: ',', outputMode: 'stream',headers:true })
     // console.time()
 
     //    for await (const line of stream) {
     //      console.log("lklklklklklklk\n",line[0]);
     //   }
 
-    stream.on('data', (data) => {
-      console.log("sksnksjkjnsks\n",data)
-    })
+    // stream.on('data', (data) => {
+    //   console.log("sksnksjkjnsks", data)
+    // })
 
-    stream.on('end', () => {
-      console.log("endendend")
-    })
+    // stream.on('end', () => {
+    //   console.log("endendend")
+    // })
     // console.timeEnd()
 
   })();
