@@ -1,4 +1,5 @@
 .DS_Store
+.vscode
 
 # Lock files
 yarn.lock
